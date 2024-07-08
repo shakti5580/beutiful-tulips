@@ -45,6 +45,7 @@ body {
 .petal {
     transform-origin: bottom center;
     animation: glow 2s ease-in-out infinite alternate, open 4s ease-in-out infinite alternate;
+    opacity: 0.8; /* Reduce opacity slightly to intensify glow */
 }
 
 .petal-1 {
@@ -59,12 +60,36 @@ body {
     animation-delay: 2s;
 }
 
+.petal-4 {
+    animation-delay: 3s;
+}
+
+.petal-5 {
+    animation-delay: 4s;
+}
+
+.petal-6 {
+    animation-delay: 5s;
+}
+
+.petal-7 {
+    animation-delay: 6s;
+}
+
+.petal-8 {
+    animation-delay: 7s;
+}
+
+.petal-9 {
+    animation-delay: 8s;
+}
+
 @keyframes glow {
     0% {
-        filter: drop-shadow(0 0 5px #FF69B4);
+        filter: drop-shadow(0 0 10px #FF69B4); /* Increase shadow intensity */
     }
     100% {
-        filter: drop-shadow(0 0 20px #FF1493);
+        filter: drop-shadow(0 0 30px #FF1493); /* Increase shadow intensity */
     }
 }
 
