@@ -7,7 +7,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="garden">
+    <div id="loginPage" class="login-container">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p id="errorMessage" class="error-message"></p>
+    </div>
+
+    <div id="tulipPage" class="garden" style="display: none;">
         <div class="tulip-container">
             <svg class="tulip" viewBox="0 0 100 100">
                 <g class="stem">
@@ -25,5 +37,20 @@
             </svg>
         </div>
     </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === 'yourUsername' && password === 'yourPassword') {
+                document.getElementById('loginPage').style.display = 'none';
+                document.getElementById('tulipPage').style.display = 'flex';
+            } else {
+                document.getElementById('errorMessage').textContent = 'Invalid username or password.';
+            }
+        });
+    </script>
 </body>
 </html>
